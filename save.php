@@ -1,38 +1,13 @@
-<?
+<?php
 session_start();
 //-----------------//
-    $handle = fopen('db/users.txt', 'r') or die("Ошибка открытия файла!");
-    while (i<2) {
-        $nomer= fgets(1);
-        $login = $nomer;
-        $from = smsc;
-        $coding = 2;
- 
-        $txt = "бла-бла-бла";
-        $text = urlencode(iconv("utf-8","ucs-2be",$txt));
- 
-        $url = "http://172.27.27.53:11003/cgi-bin/sendsms?user=123&password=456&from=$from&to=$to&text=$text&coding=$coding";
-        file_get_contents($url);
-
-        $nomer= fgets(2);
-        $password = $nomer;
-        $from = smsc;
-        $coding = 2;
-        
-        $txt = "бла-бла-бла";
-        $text = urlencode(iconv("utf-8","ucs-2be",$txt));
-        
-        $url = "http://172.27.27.53:11003/cgi-bin/sendsms?user=123&password=456&from=$from&to=$to&text=$text&coding=$coding";
-        file_get_contents($url);
-        i=2;
-    }
-    
-
+$login = 'xackep';          // Логин
+$password = 'qwerty';      // Пароль
 //-----------------//
 
 if (($_COOKIE['login'] == $login) && ($_COOKIE['password'] == $password) || ($_SESSION['password'] == md5($login.':'.$password)))
  {
-  echo 'атсасиски';
+  echo '<script>alert(\'Вы уже авторизированны\')</script>';
  }
  else
  {
@@ -83,4 +58,7 @@ if (($_COOKIE['login'] == $login) && ($_COOKIE['password'] == $password) || ($_S
   }
   /* geforse.name */
 ?>
+"Авторизация на скорую руку" :)
+Сохраняет cookie, либо session
+*Советую ещё добавить проверку на спец.символы
  
