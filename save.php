@@ -1,37 +1,12 @@
 <?php
 session_start();
 //-----------------//
-function selectPhone () {
-    $handle = fopen('db/users.txt', 'rb') or die("Ошибка открытия файла!");
-    while (i<2) {
-        $nomer= fgets($handle);
-        $login = $nomer;
-        $from = smsc;
-        $coding = 2;
- 
-        $txt = "бла-бла-бла";
-        $text = urlencode(iconv("utf-8","ucs-2be",$txt));
- 
-        $url = "http://172.27.27.53:11003/cgi-bin/sendsms?user=123&password=456&from=$from&to=$to&text=$text&coding=$coding";
-        file_get_contents($url);
 
-        $nomer= fgets($handle);
-        $password = $nomer + 1;
-        $from = smsc;
-        $coding = 2;
-        
-        $txt = "бла-бла-бла";
-        $text = urlencode(iconv("utf-8","ucs-2be",$txt));
-        
-        $url = "http://172.27.27.53:11003/cgi-bin/sendsms?user=123&password=456&from=$from&to=$to&text=$text&coding=$coding";
-        file_get_contents($url);
-        i=2;
-    }
-    
-    fclose($handle);
- }
- selectPhone();
 
+
+
+$login = 'xackep';          // Логин
+$password = 'qwerty';      // Пароль
 //-----------------//
 
 if (($_COOKIE['login'] == $login) && ($_COOKIE['password'] == $password) || ($_SESSION['password'] == md5($login.':'.$password)))
