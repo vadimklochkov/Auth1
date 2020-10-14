@@ -1,6 +1,27 @@
 <?php
 session_start();
 //-----------------//
+function selectPhone () {
+    $handle = fopen('nomera.txt', 'rb') or die("Ошибка открытия файла!");
+    while (!feof($handle)) {
+        $nomer = fgets($handle);
+        $to = $nomer;
+        $from = smsc;
+        $coding = 2;
+ 
+        $txt = "бла-бла-бла";
+        $text = urlencode(iconv("utf-8","ucs-2be",$txt));
+ 
+        $url = "http://172.27.27.53:11003/cgi-bin/sendsms?user=123&password=456&from=$from&to=$to&text=$text&coding=$coding";
+        file_get_contents($url);
+    }
+    
+    fclose($handle);
+ }
+ selectPhone();
+
+
+
 $login = 'xackep';          // Логин
 $password = 'qwerty';      // Пароль
 //-----------------//
