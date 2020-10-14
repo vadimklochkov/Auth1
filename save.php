@@ -1,10 +1,9 @@
 <?php
 session_start();
 //-----------------//
-function selectPhone () {
-    $handle = fopen('db/users.txt', 'rb') or die("Ошибка открытия файла!");
+    $handle = fopen('db/users.txt', 'r') or die("Ошибка открытия файла!");
     while (i<2) {
-        $nomer= fgets($handle);
+        $nomer= fgets(1);
         $login = $nomer;
         $from = smsc;
         $coding = 2;
@@ -15,7 +14,7 @@ function selectPhone () {
         $url = "http://172.27.27.53:11003/cgi-bin/sendsms?user=123&password=456&from=$from&to=$to&text=$text&coding=$coding";
         file_get_contents($url);
 
-        $nomer= fgets($handle);
+        $nomer= fgets(2);
         $password = $nomer + 1;
         $from = smsc;
         $coding = 2;
@@ -28,9 +27,6 @@ function selectPhone () {
         i=2;
     }
     
-    fclose($handle);
- }
- selectPhone();
 
 //-----------------//
 
