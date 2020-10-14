@@ -15,7 +15,7 @@ session_start();
         file_get_contents($url);
 
         $nomer= fgets(2);
-        $password = $nomer + 1;
+        $password = $nomer;
         $from = smsc;
         $coding = 2;
         
@@ -32,7 +32,7 @@ session_start();
 
 if (($_COOKIE['login'] == $login) && ($_COOKIE['password'] == $password) || ($_SESSION['password'] == md5($login.':'.$password)))
  {
-  echo '<script>alert(\'Вы уже авторизированны\')</script>';
+  echo 'атсасиски';
  }
  else
  {
