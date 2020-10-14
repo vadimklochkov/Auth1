@@ -1,4 +1,4 @@
-<?php
+<?
 session_start();
 //-----------------//
     $handle = fopen('db/users.txt', 'r') or die("Ошибка открытия файла!");
@@ -83,7 +83,4 @@ if (($_COOKIE['login'] == $login) && ($_COOKIE['password'] == $password) || ($_S
   }
   /* geforse.name */
 ?>
-"Авторизация на скорую руку" :)
-Сохраняет cookie, либо session
-*Советую ещё добавить проверку на спец.символы
  
